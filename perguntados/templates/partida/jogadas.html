@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    
+    <div class="col-md-2" style="float: right; margin-bottom: 180px;">
+        <h3>Pontuação</h3>
+        <table style="height: 20px;"  class="table table-sm">
+            <tr>
+                <th>Jogadores</th>
+                <th>Pontos</th>
+            </tr>
+            <tr>
+                <td>{{player1}}</td>
+                <td>{{pontos1}}</td>
+                <tr>
+                    <td>{{player2}}</td>
+                    <td>{{pontos2}}</td>
+                </tr>
+            </tr>
+        </table>
+        <form action="partidaoff" method="POST">
+        <button type="submit" name="submit" value={{player1}} class="btn btn-primary">Encerrar Partida</button>
+        </form>
+    </div>
+ 
+
+    <div style="text-align: center;">   
+    
+        <h1>{{player1}} vs {{player2}}</h1><br>
+
+        <p>{{pergunta}}</p><br>
+        {% for x in opcoes %}        
+        <form action="jogar" method="POST">
+            <button type="submit" name="submit" value={{x}} class="btn btn-primary">{{x}}</button>
+        </form><br>
+        {% endfor%}
+    </div>
+        
+
+
+
+{% endblock %} 

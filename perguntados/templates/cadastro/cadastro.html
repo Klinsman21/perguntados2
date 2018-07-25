@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="top-buffer">
+    <div class="mx-auto" style="width: 300px;">    
+        <form action="cadastro" method="POST">
+                <div class="col-sm-20 text-center">
+                <img class="img-fluid" alt="Responsive image" height="100" width="100" src="http://lulytrigo.com/wp-content/uploads/2014/03/character-pochoclin.png" >
+
+                <input style="margin-top: 10px;"  "type="text" name="nome" class="form-control" placeholder="UserName" required><br>
+            
+                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"><br>
+                
+                <input required type="password" name="senha" class="form-control" placeholder="Senha"><br>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                
+                <button style="margin: 5px; " type="submit" name="submit" value="b2" class="btn btn-primary">Cadastrar</button>
+
+                <button onclick="window.location.href='/'" style="margin: 5px;" class="btn btn-secundary">Voltar</button>
+
+                </div>
+                </div>
+                <div class="form-group">
+
+        </form>
+        
+
+
+
+{% endblock %} 

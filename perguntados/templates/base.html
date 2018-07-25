@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <!-- Required meta tags -->
+        <title>Perguntados INTIN</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <style> 
+          input {width: 20%; height: 20%;}
+
+          .top-buffer { margin-top: 100px; }
+          .btn-group { display: inline-block; }
+          .myButton {
+                      position: relative;
+                      left: 50%;
+                      transform: translateX(-50%);
+                    }
+
+        .button-container {
+                      width: 120px;
+                      display:block;
+                      position:relative;
+                      margin-top: 0px;
+                      margin-left: 90%;
+                      margin-bottom: 20px; 
+                      text-align: center;
+                      height: auto;
+                          }
+        .px-2 {
+              padding-left: ($spacer * .5) !important;
+              padding-right: ($spacer * .5) !important;
+              }
+
+        </style>
+
+        <script>
+            function myFunction() {
+            location.reload();
+                                  }
+        </script>
+
+</head>
+<body>
+
+  {% block content %}
+  {% endblock %}
+
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+</body>
+</html>
+

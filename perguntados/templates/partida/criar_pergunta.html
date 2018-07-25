@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="top-buffer">
+    <div class="mx-auto" style="width: 300px;">    
+        <form action="criar_pergunta" method="POST" >
+                <div class="col-sm-20 text-center">
+                    <h1 class="container-fluid">Cadastro de pergunta</h1><br>
+                <textarea name="pergunta" required rows="8" cols="40" class="form-control" placeholder="Digite aqui sua pergunta"></textarea><br>
+            
+                <select class="form-control" name="categoria">
+                    <option selected disabled>Selecione a categoria</option>
+                    <option value= "1">Ciência</option>
+                    <option value="2">Geografia</option>
+                    <option value="3">Arte</option>
+                    <option value="4">Esporte</option>
+                    <option value="5">Entretenimento</option>
+                    <option value="6">História</option>
+                </select><br>
+                
+                <input required type="text" name="resp1" class="form-control" placeholder="Resposta 1"><br>
+                <input required type="text" name="resp2" class="form-control" placeholder="Resposta 2"><br>
+                <input required type="text" name="resp3" class="form-control" placeholder="Resposta 3"><br>
+                <input required type="text" name="respC" class="form-control" placeholder="Resposta correta"><br>
+
+                <div class="btn-group" role="group">
+                
+                
+                <button style="margin: 5px; " type="submit" name="submit" value="b2" class="btn btn-primary">Cadastrar</button>
+
+
+                <button onclick="window.location.href='/painel'" style="margin: 5px;" class="btn btn-secundary">Voltar</button>
+
+                </div>
+               
+                </div>
+
+        </form>
+        
+
+
+
+{% endblock %} 

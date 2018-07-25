@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="top-buffer">    
+    <div class="mx-auto" style="width: 300px;">
+        <div class="col-sm-20 text-center">
+        <img class="img-fluid" alt="Responsive image" height="90" width="90" src="http://lulytrigo.com/wp-content/uploads/2014/03/preguntados-lite-12-535x535.png" >
+        <h1>Perguntados INTIN</h1>
+        <div style="margin-top:20px;">
+        <form action="login" method="POST" class="form-signin">
+                
+                <label class="container-fluid">Nome de usuário:</label>
+
+                <input required {% if error %}style="border-color: red;" placeholder="Nome Incorreto"{% endif %} "type="text" {% if name %} value={{name}} {% endif %} name="UserName" class="form-control" >
+
+                <label class="container-fluid">Senha:</label>
+
+                <input required {% if error2 %}style="border-color: red;" placeholder="Senha Incorreta"{% endif %} type="password" name="senha" class="form-control" >
+                <br>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+
+                <button type="submit" name="submit" value="b1" class="btn btn-primary">Login</button>
+                <button style="margin: 5px;" onclick="window.location.href='/cadastro'" name="submit" value="b2"  class="btn btn-secundary">Cadastrar-se</button>
+                </div>
+                
+        </form>
+     </div>   
+    </div>
+    </div>
+    </div>
+
+
+
+
+{% endblock %} 

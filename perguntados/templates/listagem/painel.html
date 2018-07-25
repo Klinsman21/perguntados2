@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+body {
+    background-color: #84817a;
+}
+</style>
+
+<div class="container-fluid" style="background: #84817a; width: auto;">
+
+  <h1 class="text-center" style="color: #ffffff; ">Seja Bem-vindo ao Perguntados INTIN</h1>
+
+
+<div class="text-right">
+<p style="color: #ffffff">Olá {{text}}</p>
+<button style="color: #ffffff" onclick="myFunction()" class="btn btn-outline-success">Atualizar</button>
+<form action="logout" method="POST" style="display: inline;">
+		<button style="color: #ffffff" type="submit" class="btn btn-outline-warning">Sair</button>
+		
+	</form>
+
+
+</div>
+</div>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-sm-4" style="background: #d1ccc0;">
+
+      <h3 style="text-align: center; color: #ffffff">Conquistas</h3>
+      
+      <button onclick="window.location.href='/criar_pergunta'" class="btn btn-primary">Criar nova pergunta</button>
+      <p style="color: #ffffff">Partidas ganhas:</p>
+      
+
+    </div>
+
+    <div class="col-sm-4 border" style="background: #d1ccc0;">
+      <h3 style="text-align: center; color: #ffffff">Partidas</h3>
+
+      	<div style="margin-bottom: 15px;">
+       <button onclick="window.location.href='/criar_partida'" class="btn btn-primary">Criar nova partida</button>
+       <form action="criar_partida" method="POST" style="display: inline;">
+       		<button type="submit" name="apagar" value="d"  onclick="window.location.href='/criar_partida'" class="btn btn-danger">Apagar partida</button>
+		</form>
+
+		</div>
+
+
+
+       {% for x in partida %}
+        	
+        	<br>
+        	<form action="partida" method="POST" style="margin-top: 5px;">
+        		<button value="{{x[1]}}" name="submit" type="submit" class="btn btn-primary">Jogar</button>
+            </form>
+        	<p style="display: inline;">{{x[0]}}: Disponível</p>
+    
+
+
+        {% endfor %}
+
+
+
+    </div>
+    <div class="col-sm-4" style="background: #d1ccc0;">
+      <h3 style="text-align: center; color: #ffffff">Resultados</h3>
+      <p>Vencedor: {{vencedor}}</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %} 
